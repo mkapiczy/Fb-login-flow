@@ -47,7 +47,7 @@ public class HomeController {
     public String insertData(ModelMap model, 
                              @ModelAttribute("insertRecord") @Valid Record record,
                              BindingResult result) {
-      
+
         return home(model);
     }
 }
