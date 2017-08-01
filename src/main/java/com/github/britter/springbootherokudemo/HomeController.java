@@ -56,7 +56,7 @@ public class HomeController {
     }
 
     @RequestMapping(path = "/redirect", method = RequestMethod.GET)
-    public String redirect(ModelMap model, @ModelAttribute("insertRecord") @Valid Record record, BindingResult result) {
+    public String redirect(ModelMap model) {
 
         return "home";
     }
