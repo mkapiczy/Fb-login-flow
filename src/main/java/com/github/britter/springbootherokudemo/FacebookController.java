@@ -36,8 +36,8 @@ public class FacebookController {
     private FacebookRepository repository;
     private String appId = "1955772338033020";
     private String appSecret = "3e5e6b3fc275af2d4303391ab7a03e58";
-    String appDomain = "http://localhost:8080";
-    String appDomainHeroku = "https://fb-login-flow.herokuapp.com";
+//    String appDomain = "http://localhost:8080";
+    String appDomain = "https://fb-login-flow.herokuapp.com";
     private String firstRedirectUri = appDomain + "/facebook/firstRedirect";
     private String fbUrl = "https://www.facebook.com/v2.10/dialog/oauth?client_id=%s&redirect_uri=%s";
 
