@@ -54,7 +54,7 @@ public class FacebookController {
         return new ModelAndView("redirect:" + redirectUrl);
     }
 
-    @RequestMapping(path = "facebook/firstRedirect", method = RequestMethod.GET)
+    @RequestMapping(path = "/facebook/firstRedirect", method = RequestMethod.GET)
     public ModelAndView firstRedirect(HttpServletRequest request, HttpServletResponse response) {
         String code = request.getParameter("code");
         String redirect = "https://graph.facebook.com/oauth/access_token?client_id="
@@ -65,7 +65,7 @@ public class FacebookController {
 
     }
 
-    @RequestMapping(path = "facebook/secondRedirect", method = RequestMethod.GET)
+    @RequestMapping(path = "/facebook/secondRedirect", method = RequestMethod.GET)
     public String secondRedirect(HttpServletRequest request, HttpServletResponse response) {
         String accessToken = request.getParameter("accessToken");
         System.out.println(accessToken);
