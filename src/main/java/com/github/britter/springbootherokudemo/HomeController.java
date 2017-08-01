@@ -48,15 +48,16 @@ public class HomeController {
         return "home";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView insertData(ModelMap model, @ModelAttribute("insertRecord") @Valid Record record, BindingResult result) {
+    @RequestMapping(path = "/connect/facebook", method = RequestMethod.POST)
+    public ModelAndView insertData(ModelMap model) {
         String redirectUrl = String.format(fbUrl, clientId, redirectUri);
-        return new ModelAndView("redirect:" + fbUrl);
+        System.out.println(redirectUrl);
+        return new ModelAndView("redirect:" + redirectUrl);
     }
 
-    @RequestMapping(path = "/redirect", method = RequestMethod.POST)
-    public ModelAndView redirect(ModelMap model, @ModelAttribute("insertRecord") @Valid Record record, BindingResult result) {
+    @RequestMapping(path = "/redirect", method = RequestMethod.GET)
+    public String redirect(ModelMap model, @ModelAttribute("insertRecord") @Valid Record record, BindingResult result) {
 
-        return new ModelAndView();
+        return "home";
     }
 }
