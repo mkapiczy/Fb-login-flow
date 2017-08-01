@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
 </head>
 <body>
-<h3>You are logged in as <div th:text="${fb.name}"></div>!</h3>
+<h3>You are logged in as <div th:text="${fb}"></div>!</h3>
 
 <form action="/facebook/logout" method="POST">
     <input type="hidden" name="scope" value="user_posts" />

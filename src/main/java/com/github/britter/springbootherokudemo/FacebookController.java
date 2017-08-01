@@ -50,11 +50,11 @@ public class FacebookController {
     public ModelAndView home(HttpServletRequest request, HttpServletResponse response) {
         Long loggedIn = (Long) request.getSession().getAttribute("loggedIn");
         if (loggedIn != null) {
-            FaceBookPojo fbp = repository.getOne(loggedIn);
+//            FaceBookPojo fbp = repository.getOne(loggedIn);
 
-            System.out.println(fbp.getName());
+            System.out.println(request.getSession().getAttribute("loggedInName"));
             ModelAndView mav = new ModelAndView("loggedIn");
-            mav.addObject("fb", fbp);
+            mav.addObject("fb", request.getSession().getAttribute("loggedInName"));
             return mav;
         } else {
             return new ModelAndView("home");
@@ -123,8 +123,9 @@ public class FacebookController {
             FaceBookPojo fbp = new Gson().fromJson(outputString,
                     FaceBookPojo.class);
             System.out.println(fbp);
-            fbp = repository.save(fbp);
+//            fbp = repository.save(fbp);
             request.getSession().setAttribute("loggedIn", fbp.getId());
+            request.getSession().setAttribute("loggedInName", fbp.getName());
             return new ModelAndView("redirect:/");
         } catch (MalformedURLException e) {
             e.printStackTrace();
