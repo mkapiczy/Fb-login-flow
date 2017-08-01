@@ -33,8 +33,8 @@ public class FacebookController {
     private RecordRepository repository;
     private String clientId = "1955772338033020";
     private String appSecret = "3e5e6b3fc275af2d4303391ab7a03e58";
-    private String firstRedirectUri = "https://fb-login-flow.herokuapp.com/firstRedirect";
-    private String secondRedirectUri = "https://fb-login-flow.herokuapp.com/secondRedirect";
+    private String firstRedirectUri = "https://fb-login-flow.herokuapp.com/facebook/firstRedirect";
+    private String secondRedirectUri = "https://fb-login-flow.herokuapp.com/facebook/secondRedirect";
     private String fbUrl = "https://www.facebook.com/v2.10/dialog/oauth?client_id=%s&redirect_uri=%s";
 
     @Autowired
